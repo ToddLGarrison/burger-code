@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RadioButton = ({ label, options, selectedOption, onChange }) => {
+const RadioButtons = ({ label, options, selectedOption, onChange }) => {
     return (
         <div>
             <label>{label}</label>
@@ -26,4 +26,4 @@ const handleRadioButtonChange = (option) => {
     return option
 }
 
-export default RadioButton;
+export default RadioButtons;
