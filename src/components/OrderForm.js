@@ -75,8 +75,24 @@ const OrderForm = () => {
                 selectedOption={state.bunType}
                 onChange={handleRadioButtonChange}
             />
-            
-            
+            <Checkboxes
+                label='Want A Side?'
+                options={['YES!']}
+                selectedOption={state.wantSide ? ['YES!'] : []}
+                onChange={handleWantSideChange}
+            />
+            {state.wantSide && (
+                <Dropdown
+                    label='Side Options'
+                    options={['Salad', 'Fries', 'Potatoes', 'All Dressed Chips', 'Veggies']}
+                    selectedOption={state.sideOption}
+                    onChange={handleSideOptionChange}
+                />
+            )}
+            <Button
+                label="SUBMIT ORDER"
+                onClick={handleSubmit}
+            />
         </>
     )
 }
