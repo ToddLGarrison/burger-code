@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dropdown = ({ label, options, selectedOption, onChange}) => {
+const Dropdown = ({ label, options, selectedOption, onChange }) => {
     return (
         <div>
             <label htmlFor="dropdown">{label}</label>

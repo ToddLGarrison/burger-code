@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const Checkboxes = ({ label, options, selectedOptions, onChange }) => {
+const RadioButton = ({ label, options, selectedOption, onChange }) => {
     return (
         <div>
             <label>{label}</label>
@@ -8,11 +8,11 @@ const Checkboxes = ({ label, options, selectedOptions, onChange }) => {
                 {options.map((option) => (
                     <div key={option}>
                         <input 
-                            type="checkbox"
+                            type="radio"
                             id={option}
                             value={option}
-                            checked={selectedOptions.includes(option)}
-                            onChange={() => onChange(handleCheckboxChange(option))} 
+                            checked={option === selectedOption}
+                            onChange={() => onChange(handleRadioButtonChange(option))}
                         />
                         <label htmlFor={option}>{option}</label>
                     </div>
@@ -22,8 +22,8 @@ const Checkboxes = ({ label, options, selectedOptions, onChange }) => {
     )
 }
 
-const handleCheckboxChange = (option) => {
+const handleRadioButtonChange = (option) => {
     return option
 }
 
-export default Checkboxes
+export default RadioButton;
