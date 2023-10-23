@@ -29,15 +29,54 @@ const formReducer = (state, action) => {
 
 
 const OrderForm = () => {
+    const [state, dispatch] = useReducer(formReducer, initialState);
+
+    const handleDropdownChange = (value) => {
+        dispatch({ type: 'SET_BURGER_TYPE', payload: value })
+    }; 
+    const handleCheckboxesChange = (selectedOptions) => {
+        dispatch ({ type: 'SET_TOPPINGS', payload: selectedOptions })
+    };
+
+    const handleRadioButtonChange = (value) => {
+        dispatch({ type: 'SET_BUN_TYPE', payload: value})
+    };
+
+    const handleWantSideChange = (value) => {
+        dispatch({ type: 'SET_WANT_SIDE', payload: value})
+    };
+
+    const handleSideOptionChange = (value) => {
+        dispatch({ type: 'SET_SIDE_OPTION', payload: value})
+    };
+
+    const handleSubmit = () => {
+        console.log("GEEAAAAASSSSSY", state)
+    }
+
 
     return (
         <>
             <Dropdown 
                 label='Burger Type' 
-                options={['Rare', 'Medium Rare', 'Medium', 'Well Done']} 
+                options={['Rare', 'Medium Rare', 'Medium', 'Well Done', 'Chicken', 'Vegan']} 
                 selectedOption={state.burgerType}
                 onChange={handleDropdownChange} 
             />
+            <Checkboxes 
+                label='Toppings'
+                options={['American Cheese', 'Cheddar', 'Pickles', 'Red Onion', 'Lettuce',]}
+                selectedOption={state.toppings}
+                onChange={handleCheckboxesChange}
+            />
+            <RadioButtons
+                label='Bun Type'
+                options={['Regular', 'Potato', 'Gluten Free', 'Hawaiian']}
+                selectedOption={state.bunType}
+                onChange={handleRadioButtonChange}
+            />
+            
+            
         </>
     )
 }
