@@ -12,7 +12,7 @@ const Checkboxes = ({ label, options, selectedOptions, onChange }) => {
                             id={option}
                             value={option}
                             checked={selectedOptions.includes(option)}
-                            onChange={() => onChange(handleCheckboxChange(option))} 
+                            onChange={() => onChange((option))} 
                         />
                         <label htmlFor={option}>{option}</label>
                     </div>
@@ -20,10 +20,6 @@ const Checkboxes = ({ label, options, selectedOptions, onChange }) => {
             </div>
         </div>
     )
-}
-
-const handleCheckboxChange = (option) => {
-    return option
 }
 
 export default Checkboxes

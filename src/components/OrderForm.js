@@ -16,7 +16,7 @@ const formReducer = (state, action) => {
         case 'SET_TOPPINGS':
             return { ...state, toppings: action.payload };
         case 'SET_BUN_TYPE':
-            return { ...state, bolType: action.payload };
+            return { ...state, bunType: action.payload };
         case 'SET_WANT_SIDE':
             return { ...state, wantSide: action.payload };
         case 'SET_SIDE_OPTION':
@@ -66,7 +66,7 @@ const OrderForm = () => {
             <Checkboxes 
                 label='Toppings'
                 options={['American Cheese', 'Cheddar', 'Pickles', 'Red Onion', 'Lettuce',]}
-                selectedOption={state.toppings}
+                selectedOptions={state.toppings}
                 onChange={handleCheckboxesChange}
             />
             <RadioButtons
@@ -78,7 +78,7 @@ const OrderForm = () => {
             <Checkboxes
                 label='Want A Side?'
                 options={['YES!']}
-                selectedOption={state.wantSide ? ['YES!'] : []}
+                selectedOptions={state.wantSide ? ['YES!'] : []}
                 onChange={handleWantSideChange}
             />
             {state.wantSide && (
