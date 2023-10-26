@@ -56,3 +56,7 @@
   border-radius: 0.5rem;
   background-color: #f9f9f9;
 }
+
+.bold-label {
+  font-weight: bold;
+}

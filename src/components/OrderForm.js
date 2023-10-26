@@ -59,7 +59,7 @@ const OrderForm = () => {
         <div className="form-container">
             <div className="form-section">
             <Dropdown 
-                label='Burger Type' 
+                label={<span className="bold-label">'Burger Type'</span>} 
                 options={['Rare', 'Medium Rare', 'Medium', 'Well Done', 'Chicken', 'Vegan']} 
                 selectedOption={state.burgerType}
                 onChange={handleDropdownChange} 
@@ -67,7 +67,7 @@ const OrderForm = () => {
             </div>
             <div className="form-section">
                 <Checkboxes 
-                    label='Toppings'
+                    label={<span className="bold-label">'Toppings'</span>}
                     options={['American Cheese', 'Cheddar', 'Pickles', 'Red Onion', 'Lettuce',]}
                     selectedOptions={state.toppings}
                     onChange={handleCheckboxesChange}
@@ -75,7 +75,7 @@ const OrderForm = () => {
             </div>
             <div className="form-section">
                 <RadioButtons
-                    label='Bun Type'
+                    label={<span className="bold-label">'Bun Type'</span>}
                     options={['Regular', 'Potato', 'Gluten Free', 'Hawaiian']}
                     selectedOption={state.bunType}
                     onChange={handleRadioButtonChange}
@@ -83,14 +83,14 @@ const OrderForm = () => {
             </div>
             <div className="form-section">
                 <Checkboxes
-                    label='Want A Side?'
+                    label={<span className="bold-label">'Want A Side?'</span>}
                     options={['YES!']}
                     selectedOptions={state.wantSide ? ['YES!'] : []}
                     onChange={handleWantSideChange}
                 />
                 {state.wantSide && (
                     <Dropdown
-                        label='Side Options'
+                        label={<span className="bold-label">'Side Options'</span>}
                         options={['Salad', 'Fries', 'Potatoes', 'All Dressed Chips', 'Veggies']}
                         selectedOption={state.sideOption}
                         onChange={handleSideOptionChange}
@@ -99,7 +99,7 @@ const OrderForm = () => {
             </div>
             <div className="form-section">
                 <Button
-                    label="SUBMIT ORDER"
+                    label={<span className="bold-label">"SUBMIT ORDER"</span>}
                     onClick={handleSubmit}
                 />
             </div>
