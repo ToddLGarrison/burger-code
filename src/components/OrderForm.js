@@ -56,44 +56,54 @@ const OrderForm = () => {
 
 
     return (
-        <>
+        <div className="form-container">
+            <div className="form-section">
             <Dropdown 
                 label='Burger Type' 
                 options={['Rare', 'Medium Rare', 'Medium', 'Well Done', 'Chicken', 'Vegan']} 
                 selectedOption={state.burgerType}
                 onChange={handleDropdownChange} 
             />
-            <Checkboxes 
-                label='Toppings'
-                options={['American Cheese', 'Cheddar', 'Pickles', 'Red Onion', 'Lettuce',]}
-                selectedOptions={state.toppings}
-                onChange={handleCheckboxesChange}
-            />
-            <RadioButtons
-                label='Bun Type'
-                options={['Regular', 'Potato', 'Gluten Free', 'Hawaiian']}
-                selectedOption={state.bunType}
-                onChange={handleRadioButtonChange}
-            />
-            <Checkboxes
-                label='Want A Side?'
-                options={['YES!']}
-                selectedOptions={state.wantSide ? ['YES!'] : []}
-                onChange={handleWantSideChange}
-            />
-            {state.wantSide && (
-                <Dropdown
-                    label='Side Options'
-                    options={['Salad', 'Fries', 'Potatoes', 'All Dressed Chips', 'Veggies']}
-                    selectedOption={state.sideOption}
-                    onChange={handleSideOptionChange}
+            </div>
+            <div className="form-section">
+                <Checkboxes 
+                    label='Toppings'
+                    options={['American Cheese', 'Cheddar', 'Pickles', 'Red Onion', 'Lettuce',]}
+                    selectedOptions={state.toppings}
+                    onChange={handleCheckboxesChange}
                 />
-            )}
-            <Button
-                label="SUBMIT ORDER"
-                onClick={handleSubmit}
-            />
-        </>
+            </div>
+            <div className="form-section">
+                <RadioButtons
+                    label='Bun Type'
+                    options={['Regular', 'Potato', 'Gluten Free', 'Hawaiian']}
+                    selectedOption={state.bunType}
+                    onChange={handleRadioButtonChange}
+                />
+            </div>
+            <div className="form-section">
+                <Checkboxes
+                    label='Want A Side?'
+                    options={['YES!']}
+                    selectedOptions={state.wantSide ? ['YES!'] : []}
+                    onChange={handleWantSideChange}
+                />
+                {state.wantSide && (
+                    <Dropdown
+                        label='Side Options'
+                        options={['Salad', 'Fries', 'Potatoes', 'All Dressed Chips', 'Veggies']}
+                        selectedOption={state.sideOption}
+                        onChange={handleSideOptionChange}
+                    />
+                )}
+            </div>
+            <div className="form-section">
+                <Button
+                    label="SUBMIT ORDER"
+                    onClick={handleSubmit}
+                />
+            </div>
+        </div>
     )
 }
 
