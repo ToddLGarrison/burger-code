@@ -1,3 +1,6 @@
+/* color-pallete */
+
+
 .App {
   text-align: center;
 }
@@ -35,4 +38,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.form-container {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: .2rem;
+  border: 1px solid #ccc;
+  border-radius: .5rem;
+}
+
+.form-section {
+  margin-bottom: .1rem;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  background-color: #f9f9f9;
 }
